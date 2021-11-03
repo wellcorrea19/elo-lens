@@ -1,0 +1,7 @@
+{
+  "name": "Elo OCR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,182 @@
+ion-toolbar{
+    --background: royalblue;
+}
+  
+ion-back-button {
+    display: block;
+    z-index:10000;
+    color: white;
+}
+  
+ion-header {
+    position: initial !important;
+}
+  
+ion-content{
+    --background: #f1f1f1;
+}
+
+ion-list{
+    background: transparent;
+}
+
+ion-segment{
+    margin: 10px 0;
+    background: #c1c0c0;
+    border-radius: 25px;
+}
+
+// Formatação detalhes
+.item_1{
+    border-radius: 50px;
+}
+
+.input_dsbl{
+    background: #dedede;
+    margin-bottom: 15px;
+}
+
+// Formatação textos
+.name-transp{
+    font-size: 16px;
+    color: royalblue;
+}
+
+.title-name{
+    font-size: 10px;
+    color: royalblue;
+}
+
+.txt-filtro{
+    font-size: 16px;
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.txt-item{
+    font-size: 12px;
+    color: gray;
+    margin: 3px;
+    border-bottom: 1px solid #bbbaba;
+    padding: 7px 0;
+}
+
+.txt-arrast{
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: gray;
+    margin: 3px; 
+    top: 30px;
+    position: relative;
+    float: right;
+}
+
+.txt-seg{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.font_1{
+    font-size: 12px;
+    font-weight: bold;
+    color: #1E51A9;
+}
+
+.textarea{
+    background: #dedede;
+    margin-bottom: 15px;
+    height: 150px;
+}
+
+// Formatação de botões
+.btn_details{
+    font-size: 10px;
+    height: 50px;
+}
+
+// Formatação icone
+.icon-arrast{
+    top: 30px;
+    float: right;
+    color: gray;
+    position: relative;
+}
+
+.cancel-button{
+    position: relative;
+    left: 93%;
+}
+
+// Formatação status
+.fundo-stts{
+    width: 80px;
+    border-radius: 25px;
+    font-size: 7px;
+    font-weight: 900;
+    position: fixed;
+    top: 38px;
+    right: 5px;
+    height: 20px;
+}
+
+.stts{
+    color: black;
+    position: relative;
+    bottom: 3px;
+    text-align: center;
+}
+
+// Formatação segmento 
+.format-seg{
+    border-right: 1px solid white;
+}
+
+
+// Modal de botões
+#fundo-insertComp{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;   
+}
+  
+#insertCompButton{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 93%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+#fundo-insertDoc{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;   
+}
+  
+#insertDocButton{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 93%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    overflow: auto;
+}
+  
+.in_blur{
+    filter: blur(3px);
+}

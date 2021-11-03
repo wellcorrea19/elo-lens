@@ -1,0 +1,142 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button (click)="NavigateBack();" slot="start"></ion-back-button>
+    </ion-buttons>
+    <h4 style="color: white;">Envio de Comprovantes</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="row-search" *ngIf="!searchTabs" id="row-search">
+        <ion-col size="12" class="ion-text-center">
+            <ion-label color="medium" class="search-title">
+                Pesquisa de Comprovantes
+            </ion-label>
+            <br>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col size="12" class="cancel-button" (click)="searchInput = ''; ShowSearch()" *ngIf="searchTabs">
+          <ion-icon name="close" color="dark"></ion-icon>
+      </ion-col>
+
+      <ion-col size="12">
+          <ion-item lines="none" class="item_1">
+              <ion-input class="input_1" type="text" placeholder='Comprovantes' (ionChange)="ShowSearch()" [(ngModel)]="searchInput">
+                  <ion-icon name="search" color="medium" class="icon_search"></ion-icon>
+              </ion-input>
+          </ion-item>
+      </ion-col>
+      
+      <ion-col size="12">
+        <div class="ion-text-center">
+          <ion-button color="primary" (click)="modalInsert()">Inserir Novo Comprovante</ion-button>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid> 
+
+  <ion-list *ngFor="let comprovante of ocrComprovanteList">
+    <ion-row *ngIf="!searchTabs">
+      <ion-item-sliding>
+
+        <ion-item>
+          <ion-col size="12">
+            <p class="ion-hide">NUMERO ID - {{comprovante.id}}</p>
+            <h5 class="title-name">TIPO DE COMPROVANTE - <span class="name-transp">{{comprovante.tipodocumento}}</span></h5>
+            <p class="txt-item">DOCUMENTO - {{comprovante.documento}}</p>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button class="btn_details" color="primary" expand="block" (click)="scanningBarcode(comprovante.id)">Inserir Documento<br> via BarCode</ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button class="btn_details" color="primary" expand="block" (click)="modalInsertDoc(comprovante.id)">Inserir Documento<br> Manualmente</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="goInfoComp(comprovante.id, comprovante.user)">Visualizar</ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-row>
+  </ion-list>
+  
+  <ion-list *ngIf="searchTabs">
+    <ion-row *ngFor="let comprovante of compSearch">
+      <ion-item-sliding>
+
+        <ion-item>
+          <ion-col size="12">
+            <p class="ion-hide">NUMERO ID - {{comprovante.id}}</p>
+            <h5 class="title-name">TIPO DE COMPROVANTE - <span class="name-transp">{{comprovante.tipodocumento}}</span></h5>
+            <p class="txt-item">DOCUMENTO - {{comprovante.documento}}</p>
+          </ion-col>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="goInfoComp(comprovante.id, comprovante.user)">Visualizar</ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-row> 
+  </ion-list>
+</ion-content>
+
+<!-- modal insert comprovante -->
+<div id="fundo-insertComp">
+  <div id="insertCompButton">
+    <ion-icon name="close" style="position: relative; left: 94%;" (click)="fecharModalInsertDoc()"></ion-icon>
+    <div>
+
+      <ion-label class="font_1">Tipo de Comprovante:</ion-label>
+      <ion-select [(ngModel)]="tipocomp" interface="popover">
+        <ion-select-option value="CTE">CTE</ion-select-option>
+        <ion-select-option value="NFE">NFE</ion-select-option>
+        <ion-select-option value="RIC">RIC</ion-select-option>
+        <ion-select-option value="MINUTA">MINUTA</ion-select-option>
+        <ion-select-option value="PEDIDO">PEDIDO</ion-select-option>
+        <ion-select-option value="RECIBO PG">RECIBO PG</ion-select-option>
+        <ion-select-option value="RECIBO REC">RECIBO REC</ion-select-option>
+        <ion-select-option value="OUTROS">OUTROS</ion-select-option>
+      </ion-select>
+
+    </div>
+
+    <br>
+
+    <div class="ion-text-center">
+      <ion-button class="btn_modal" (click)="newInsert()">
+          <span class="font_3">Finalizar</span>
+      </ion-button>
+    </div>
+  </div>
+</div>
+
+<!-- modal insert documento do comprovante -->
+<div id="fundo-insertDoc">
+  <div id="insertDocButton">
+    <ion-icon name="close" style="position: relative; left: 94%;" (click)="fecharModalInsertDoc()"></ion-icon>
+    <div>
+
+      <ion-label class="font_1">Documento do Comprovante:</ion-label>
+      <ion-input class="input_dsbl" [(ngModel)]="docComp"></ion-input>
+
+    </div>
+
+    <br>
+
+    <div class="ion-text-center">
+      <ion-button class="btn_modal" (click)="docManual()">
+          <span class="font_3">Finalizar</span>
+      </ion-button>
+    </div>
+  </div>
+</div>

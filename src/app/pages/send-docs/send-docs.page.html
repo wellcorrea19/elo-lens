@@ -1,0 +1,109 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button (click)="NavigateBack();" slot="start"></ion-back-button>
+    </ion-buttons>
+    <h4 style="color: white;">Envio de Documentos</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="row-search" *ngIf="!searchTabs" id="row-search">
+        <ion-col size="12" class="ion-text-center">
+            <ion-label color="medium" class="search-title">
+                Pesquisa de Documentos
+            </ion-label>
+            <br>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      
+      <ion-col size="12" class="cancel-button" (click)="searchInput = ''; ShowSearch()" *ngIf="searchTabs">
+          <ion-icon name="close" color="dark"></ion-icon>
+      </ion-col>
+
+        <ion-col size="12">
+            <ion-item lines="none" class="item_1" >
+                <ion-input class="input_1" type="text" placeholder='Documentos' (ionChange)="ShowSearch()" [(ngModel)]="searchInput">
+                    <ion-icon name="search" color="medium" class="icon_search"></ion-icon>
+                </ion-input>
+            </ion-item>
+        </ion-col>
+        
+        <ion-col size="12">
+          <div class="ion-text-center">
+            <ion-button color="primary" (click)="modalInsert()">Inserir Novo Registro</ion-button>
+          </div>
+        </ion-col>
+
+    </ion-row>
+  </ion-grid> 
+
+
+  <ion-list *ngFor="let registro of registros">
+    <ion-row *ngIf="!searchTabs" >
+      <ion-item-sliding>
+
+        <ion-item>
+          <ion-col size="12">
+            <p class="ion-hide">NUMERO ID - {{registro.id}}</p>
+            <h5 class="title-name">DOCUMENTO - <span class="name-transp">{{registro.documento}}</span></h5>
+            <p class="txt-item">DESCRIÇÃO - {{registro.descricao}}</p>
+          </ion-col>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="goInfoDocs(registro.id, registro.user)">Visualizar</ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-row>
+  </ion-list>
+
+  
+  <ion-list *ngIf="searchTabs">
+    <ion-row *ngFor="let registro of docSearch">
+      <ion-item-sliding>
+
+        <ion-item>
+          <ion-col size="12">
+            <p class="ion-hide">NUMERO ID - {{registro.id}}</p>
+            <h5 class="title-name">DOCUMENTO - <span class="name-transp">{{registro.documento}}</span></h5>
+            <p class="txt-item">DESCRIÇÃO - {{registro.descricao}}</p>
+          </ion-col>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option (click)="goInfoDocs(registro.id, registro.user)">Visualizar</ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-row> 
+  </ion-list>
+</ion-content>
+
+<!-- modal insert register -->
+<div id="fundo-insertRegister">
+  <div id="insertRegisterButton">
+    <ion-icon name="close" style="position: relative; left: 94%;" (click)="fecharModalInsert()"></ion-icon>
+    <div>
+
+      <ion-label class="font_1">Documento:</ion-label>
+      <ion-input class="input_dsbl" [(ngModel)]="doc"></ion-input>
+
+      <ion-label class="font_1">Observações</ion-label>
+      <ion-textarea class="textarea" [(ngModel)]="descricao"></ion-textarea>
+
+    </div>
+
+    <br>
+
+    <div class="ion-text-center">
+      <ion-button class="btn_modal" (click)="newInsert()">
+          <span class="font_3">Finalizar</span>
+      </ion-button>
+    </div>
+  </div>
+</div>

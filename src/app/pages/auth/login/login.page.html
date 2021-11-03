@@ -1,0 +1,45 @@
+<ion-content class="ion-no-padding">
+  <div class="tela_1">
+
+    <div>
+        <ion-img src="./assets/img/logo-elo.png" class="logo_img" ></ion-img>
+    </div>
+
+  <form [formGroup]="loginForm">
+
+    <p class="txt_login">Você deseja realizar o login com:</p>
+    <ion-segment style="margin-bottom: 10px;">
+      <ion-segment-button (click)="type = 'email'">
+        <ion-label>E-mail</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button (click)="type = 'cpf'">
+        <ion-label>Cpf</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="type">
+      <ion-input *ngSwitchCase="'email'" class="input_1" type="email" placeholder="E-mail" name="email" formControlName="email" ></ion-input>
+      <ion-input *ngSwitchCase="'cpf'" class="input_1" type="number" placeholder="Cpf" name="cpf" formControlName="cpf" maxlength="11"></ion-input>
+    </div>
+
+<!-- Função mostrar e ocultar senha -->
+    <ion-input class="input_1" placeholder="Senha" [type]="showPassword ? 'text' : 'password'" required formControlName="senha" name="senha" autocomplete="off">
+      <ion-button fill="clear" class="show-pass" (click)="mostrarSenha()">
+        <ion-icon [name] ="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-input>
+<!-- Esqueceu a senha -->
+    <div>
+      <a (click)="Navigate('forgot-passw')" class="text_forgot">Esqueceu a senha? Clique aqui</a>
+    </div>
+    <br>
+  
+    <ion-button class="button_1" fill="clean" (click)="login()">Entrar</ion-button>
+    <!-- <ion-button class="button_1" fill="clean" href="/dashboard">Entrar</ion-button> -->
+    <ion-button class="button_2" fill="clean" (click)="Navigate('register')">Fazer o Cadastro</ion-button>
+
+    </form>
+  </div>
+
+</ion-content>

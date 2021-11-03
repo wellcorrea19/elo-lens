@@ -1,0 +1,137 @@
+// ion-toolbar{
+//     --background: black;
+//     color: white;
+// }
+// Formatação header
+ion-toolbar{
+    color: #1E51A9;
+    --background: #f1f1f1;
+}
+
+ion-content{
+    --background: #f1f1f1;
+}
+
+ion-list{
+    background: transparent;
+}
+
+ion-item{
+    --background: transparent;
+    font-size: 14px;
+}
+
+ion-col{
+    --ion-grid-column-padding: none;
+}
+
+// Formatação das telas
+.tela_1{
+    background: #f1f1f1;
+    height: 91%;
+}
+
+// Formatação dos textos
+.text_item{
+    margin-left: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.title{
+    margin: auto;
+    font-size:16px;
+    font-weight: bold;
+}
+
+.txt_footer{
+    color: black;
+    font-size: 16px;
+}
+
+// Formatação dos botões
+.button_quit{
+    --background: #1E51A9;
+    width: 60%;
+    margin: auto;
+}
+
+// Formatação dos icones
+ion-icon{
+    font-size: 18px;
+}
+
+// Formatação das imagens
+.image {
+    width:50px;
+    height:50px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: 25%;
+}
+
+// Formatação dos icones
+.icone_circle{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+// Modal de confirmação de sair da conta
+#fundo-sairConta{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    height: 100%;
+    width: 100%;
+    
+}
+
+.in_blur{
+    filter: blur(3px);
+}
+
+
+#sairContaPanel{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
+    width: 290px;
+    height: 170px;
+    
+    padding: 5px;
+    
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.font_1{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E51A9;
+}
+
+.font_2{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+}
+
+.font_3{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1E51A9;
+}
+
+.btn_modal{
+    --background: #E2E8ED;
+    width: 121px;
+}

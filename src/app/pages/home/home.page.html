@@ -1,0 +1,41 @@
+<ion-header text-center no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="true" style="color: white;"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tela_1">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col size="12">
+          <ion-button expand="block" color="light" class="btn_item" (click)="goSendDocs(user.cnpjtransportadora, user.id)">
+            <p class="text_item">ENVIAR <br> DOCUMENTOS</p>
+            <ion-icon name="camera-outline" class="icon-btn"></ion-icon>
+          </ion-button>
+        </ion-col> 
+        
+        <ion-col size="12">
+          <ion-button expand="block" color="light" class="btn_item" (click)="goSendComp(user.cnpjtransportadora, user.id)">
+            <p class="text_item">ENVIAR <br> COMPROVANTES</p>
+            <ion-icon name="receipt-outline" class="icon-btn"></ion-icon>
+          </ion-button>
+        </ion-col> 
+
+      </ion-row>
+
+    </ion-grid>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="format_btns">
+      <p class="txt_footer">Desenvolvido por Elo Softwares!</p>
+    </div>
+  </ion-toolbar>
+</ion-footer>

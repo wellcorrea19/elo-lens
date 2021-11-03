@@ -1,0 +1,53 @@
+// Formatação header
+ion-toolbar{
+  --background: royalblue;
+}
+
+ion-content{
+  --background: #f1f1f1;
+}
+
+// Formatação ion-col
+ion-col{
+  padding: 0 !important;
+}
+
+// Formatação telas
+.tela_1{
+  height: 100%;
+}
+
+// Formatação Textos
+.text_item{
+  font-size: 13px;
+  color: gray;
+  text-align: left;
+  position: relative;
+}
+
+.txt_footer{
+  color: white;
+  text-align: center;
+}
+
+// Formatação buttons
+.btn_item{
+  height: 100px;
+  margin: 7px;
+}
+
+.format_btns{
+  position: fixed;
+  bottom: 0;
+  margin-top: 10px;
+  background: royalblue;
+  width: 100%;
+}
+
+// Formatação icone
+.icon-btn{
+  position: relative;
+  bottom: 25px;
+  left: 30%;
+  color: gray;
+}

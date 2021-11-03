@@ -1,0 +1,45 @@
+<ion-header text-center no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="NavigateBack();" slot="start" icon-name="md-arrow-back"></ion-back-button>
+    </ion-buttons>
+    <h4 style="color: white;">Detalhes Imagens</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tela_1">
+
+    <ion-col size="12">
+      <div class="ion-text-center">
+        <ion-button color="primary" (click)="takePicture()">Inserir Nova Imagem</ion-button>
+      </div>
+    </ion-col>
+
+    <ion-item *ngFor="let dados of ocrComprovanteImagemList">
+      <ion-row style="width: 100%;">
+
+        <div class="format_det">
+
+          <p class="ion-hide">ID: <span class="text_item"> {{ dados.id }} </span></p>
+          <img *ngIf="dados.imagem !== ''" [src]="selectedImage">
+
+        </div>
+
+        <ion-col size="12">
+          <ion-button *ngIf="dados.imagem !== ''" class="btn_details" color="primary" expand="block" (click)="downloadImage()">Baixar Imagem</ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-item>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="format_btns">
+      <p class="txt_footer">Desenvolvido por Elo Softwares!</p>
+    </div>
+  </ion-toolbar>
+</ion-footer>

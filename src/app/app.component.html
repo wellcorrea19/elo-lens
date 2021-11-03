@@ -1,0 +1,74 @@
+<ion-app>
+  <ion-menu contentId="content1" side="start">
+
+    <ion-header no-border>
+      <ion-toolbar >
+        <ion-row>
+          <ion-col size="3">
+            <ion-avatar>
+              <ion-img src="assets/icon/teste1.jpg" class="image"></ion-img>
+            </ion-avatar>
+          </ion-col>
+
+          <ion-col size="9" class="text-left">
+            <ion-label style="padding-top: 15%; font-size: 16px; font-weight: bold; position: absolute; left: 10%; color: black;">
+              {{ user.name }}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div class="tela_1">
+
+        <ion-item>
+          <p class="title">Configurações</p>
+        </ion-item>
+        <!-- <ion-item (click)="Navigate('profile')">
+          <p>Perfil</p>
+        </ion-item>
+        <ion-item (click)="goChangePass(user.cpf)">
+          <p>Trocar Senha</p>
+        </ion-item> -->
+        <ion-item>
+          <ion-button class="button_quit" (click)="abrirModal()"><ion-icon name="power"></ion-icon></ion-button>
+        </ion-item>
+
+      </div>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar>
+        <div class="ion-text-center">
+          <p class="txt_footer">Versão 1.1.1.1</p>
+        </div>          
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="content1" main></ion-router-outlet>
+</ion-app>
+
+<!-- modal sair da conta-->
+<div  id="fundo-sairConta">
+    <div id="sairContaPanel">
+        <div style="font-size: 13px"> 
+            <p class="font_1">Sair</p>
+            <p class="font_2">Tem certeza que deseja sair?</p>
+        </div>
+        <ion-row>
+            <ion-col size="6">
+                <ion-menu-toggle auto-hide="true">
+                <ion-button class="btn_modal" (click)="logout()">
+                    <span class="font_3">Sim</span>
+                </ion-button>
+                </ion-menu-toggle>
+            </ion-col>
+            <ion-col size="6">
+                <ion-button class="btn_modal" (click)="fecharModal()">
+                    <span class="font_3">Não</span>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </div>
+</div>

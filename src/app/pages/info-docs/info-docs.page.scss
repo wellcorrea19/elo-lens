@@ -1,0 +1,121 @@
+ion-toolbar{
+    --background: royalblue;
+  }
+    
+  ion-back-button {
+    font-size: 16px;
+    display: block;
+    z-index:10000;
+    color: white;
+  }
+    
+  ion-header {
+    position: initial !important;
+  }
+    
+  ion-content{
+    --background: #f1f1f1;
+  }
+  
+  ion-item{
+    color: black;
+    --background: #dedede;
+    margin: 10px 0;
+  }
+      
+  // Formatação telas
+  .tela_1{
+    margin: 0 10px;
+  }
+    
+  // Formatações detalhes
+  .input_dsbl{
+    background: #dedede;
+    margin-bottom: 15px;
+  }
+  
+  .format_det{
+    background: white;
+    margin: 10px 0;
+    width: 100%;
+    box-shadow: 5px 15px 10px -12px #4c4c4c;
+  }
+    
+  // Formatação Textos
+  .title_item{
+    font-size: 9px;
+    margin-left: 10px;
+  }
+  
+  .text_item{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .bord_item{
+    border-bottom: 2px solid #f1f1f1;
+  }
+  
+  .font_1{
+    font-size: 12px;
+    font-weight: bold;
+    color: #1E51A9;
+  }
+  
+  .textarea{
+    background: #dedede;
+    margin-bottom: 15px;
+    height: 150px;
+  }
+  
+  .txt_footer{
+    color: white;
+    text-align: center;
+  }
+    
+  // Formatação buttons
+  .btn_ok{
+    position: relative;
+    left: 80%;
+    z-index: 10000;
+  }
+  
+  .btn_details{
+    font-size: 10px;
+    color: white;
+    height: 50px;
+  }
+  
+  .btn_modal{
+    --background: royalblue;
+    width: 100%;
+  }
+  
+  // Modal de botões de finalizar
+  #fundo-ocrImage{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    height: 100%;
+    width: 100%;
+    
+  }
+  
+  #ocrImage{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+  }
+  
+  .in_blur{
+    filter: blur(3px);
+  }
+  
+  
